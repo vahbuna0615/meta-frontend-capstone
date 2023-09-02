@@ -1,5 +1,38 @@
+body {
+  height: 2000px;
+}
+
 .App {
   text-align: center;
+}
+
+header {
+  margin-top: 50px;
+  display: flex;
+}
+
+header img {
+  width: 350px;
+  height: 350px;
+}
+
+nav {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul{
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 40px;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
 }
 
 .App-logo {
