@@ -1,8 +1,18 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { fireEvent, render, screen } from '@testing-library/react';
+import BookingForm from './components/BookingForm';
+import { updateTimes, initializeTimes } from './pages/BookingPage';
 
 test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  render(<BookingForm />);
+  const dateElement = screen.getByText('Booking Form');
+  console.log(dateElement)
+  expect(dateElement).toBeInTheDocument();
 });
+
+test('validate function initializeTimes', () => {
+  expect(updateTimes()).toEqual(initializeTimes())
+})
+
+test('validate function updateTimes', () => {
+
+})

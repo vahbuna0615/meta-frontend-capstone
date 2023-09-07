@@ -1,39 +1,34 @@
+import { Link } from 'react-router-dom';
 import Logo from "../images/Logo.svg"
 
 const Navbar = () => {
-  const handleClick = (anchor) => () => {
-    const id = `${anchor}-sec`;
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
   return (
     <nav>
-      <img src={Logo} alt="" />
-      <ul>
-        <li>
-          <a href="/#header" onClick={handleClick("header")}>Home</a>
-        </li>
-        <li>
-          <a href="">About</a>
-        </li>
-        <li>
-          <a href="">Menu</a>
-        </li>
-        <li>
-          <a href="">Reservations</a>
-        </li>
-        <li>
-          <a href="">Order Online</a>
-        </li>
-        <li>
-          <a href="">Login</a>
-        </li>
-      </ul>
+      <div>
+        <img src={Logo} alt="" />
+      </div>
+      <div>  
+        <ul>
+          <li>
+            <Link to='/'>Home</Link>
+          </li>
+          <li>
+            <a href="/#About">About</a>
+          </li>
+          <li>
+            <a href="/#Menu">Menu</a>
+          </li>
+          <li>
+            <a href="/#Reservations">Reservations</a>
+          </li>
+          <li>
+            <a href="/#Order">Order Online</a>
+          </li>
+          <li>
+            <a href="/#Login">Login</a>
+          </li>
+        </ul>
+      </div>
     </nav>
   )
 }

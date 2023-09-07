@@ -1,16 +1,25 @@
 import './App.css';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Header from './components/Header';
+import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import BookingPage from './pages/BookingPage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
 
 function App() {
   return (
     <>
-      <meta name='description' content='We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist'/>
-      <meta name='og:title' content='Little Lemon Restaurant'/>
-      <meta name='og:description' content='A renowned restaurant from Chicago'/>
-      <meta name='og:image' content='https://example.com/little-lemon-restaurant.jpg'/>
-      <Navbar/>
-      <Header/>
+      <Router>
+        <Navbar/>
+        <Routes>
+          <Route path='/' element={<HomePage/>}></Route>
+          <Route path='/booking' element={<BookingPage/>}></Route>
+          <Route path='/login' element={<LoginPage/>}></Route>
+          <Route path='/register' element={<RegisterPage/>}></Route>
+        </Routes>
+        <Footer/>
+      </Router>
     </>
   );
 }

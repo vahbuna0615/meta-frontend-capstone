@@ -1,20 +1,27 @@
-import FoodImg from "../images/restauranfood.jpg"
+import FoodImg from "../images/restauranfood.jpg";
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+
+  const navigate = useNavigate()
+
   return (
     <header>
       <div id="header-sec">
-        <h1>Little Lemon</h1>
-        <h3>Chicago</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Nulla fuga sequi esse amet, magnam veritatis provident quis minima nesciunt molestiae!
-        </p>
-        <button>
-          Reserve a table
-        </button>
-      </div>
-      <img src={FoodImg} alt="" />      
+        <article>
+          <h1>Little Lemon</h1>
+          <h3>Chicago</h3>
+          <p>
+            We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
+          </p>
+          <button className="button-styles" onClick={() => navigate('/booking')}>
+            Reserve a table
+          </button>
+        </article>
+        <div>
+          <img src={FoodImg} alt="" />
+        </div>  
+      </div>    
     </header>
   )
 }
