@@ -1,33 +1,34 @@
 import { useReducer } from "react";
 import BookingForm from "../components/BookingForm";
+import { fetchAPI, submitAPI } from "../utils/temp";
+import { useNavigate } from "react-router-dom";
 
-export const initializeTimes = () => {
-  return ['Select time slot', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00']
+const updateTimes = (availableTimes, date) => {
+  const response = fetchAPI(new Date(date));
+  return (response.length !== 0) ? response : availableTimes;
 }
 
-export const updateTimes = () => {
-  return initializeTimes();
-}
-
-const availableTimesReducer = (state, action) => {
-  switch (action.type) {
-    case 'INITIALIZE_TIMES':
-      return initializeTimes();
-    case 'UPDATE_TIMES':
-      return updateTimes();
-    default:
-      return state;
-  }
+const initializeTimes = (initialAvailableTimes) => {
+  const fetchedTimes = fetchAPI(new Date())
+  return [...initialAvailableTimes, ...fetchedTimes];
 }
 
 const BookingPage = () => {
-  const [availableTimes, dispatch] = useReducer(availableTimesReducer, [], initializeTimes)
+  const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
+  const navigate = useNavigate();
 
-  const handleDateChange = (date) => {
-   dispatch({ type: 'UPDATE_TIMES', payload: date }) 
+  const submitData = formData => {
+    const response = submitAPI(formData);
+    if (response) {
+      navigate('/confirmedBooking');
+    }
   }
+
   return (
-    <BookingForm timeSlots={availableTimes} dateChange={handleDateChange}/>
+    <div className="booking-form">
+      
+      <BookingForm availableTimes={availableTimes} dispatch={dispatch} submitData={submitData}/>
+    </div>
   )
 }
 

@@ -1,6 +1,7 @@
-import itemOne from '../images/bruchetta.svg';
-import itemTwo from '../images/greek salad.jpg';
-import itemThree from '../images/lemon dessert.jpg'
+import itemOne from '../assets/bruchetta.svg';
+import itemTwo from '../assets/greek salad.jpg';
+import itemThree from '../assets/lemon dessert.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const menuItems = [
   {
@@ -24,11 +25,14 @@ const menuItems = [
 ]
 
 const Main = () => {
+
+  const navigate = useNavigate();
+
   return (
     <main>
       <div className="main-menu">
         <h1>This week's specials!</h1>
-        <button className="button-styles">Online Menu</button>
+        <button className="button-styles" onClick={() => navigate('#menu')}>Online Menu</button>
       </div>
       <div className="menu-item-grid">
         {menuItems.map((item) => {

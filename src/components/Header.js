@@ -1,4 +1,4 @@
-import FoodImg from "../images/restauranfood.jpg";
+import FoodImg from "../assets/restauranfood.jpg";
 import { useNavigate } from 'react-router-dom';
 
 const Header = () => {

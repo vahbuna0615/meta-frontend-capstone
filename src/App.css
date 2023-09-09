@@ -42,6 +42,11 @@ header h1 {
   margin: 0 20px 5px 20px;
   background-color: #edefee;
   text-align: center;
+  transition: 1s opacity;
+}
+
+.menu-item:hover {
+  opacity: 0.8;
 }
 
 .menu-item img {
@@ -79,6 +84,18 @@ nav ul {
   display: flex;
 }
 
+.booking-form {
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-fields {
+  background-color: #495E57;
+  padding: 150px;
+}
+
 header img {
   height: 270px;
   margin: 0 0 0 20px;
@@ -96,6 +113,14 @@ header p {
   border-radius: 5px;
   background-color: #F4CE14;
   font-weight: 700;
+  transition: 0.5s background-color, color;
+}
+
+.button-styles:hover {
+  background-color: #495E57;
+  color: #F4CE14;
+  border: 1px solid #F4CE14;
+  cursor: pointer;
 }
 
 .footer-text {

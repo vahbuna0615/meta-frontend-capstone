@@ -4,8 +4,9 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import BookingPage from './pages/BookingPage';
-import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
+import ConfirmedBooking from './pages/ConfirmedBooking';
+import Construction from './pages/Construction';
+
 
 function App() {
   return (
@@ -15,8 +16,8 @@ function App() {
         <Routes>
           <Route path='/' element={<HomePage/>}></Route>
           <Route path='/booking' element={<BookingPage/>}></Route>
-          <Route path='/login' element={<LoginPage/>}></Route>
-          <Route path='/register' element={<RegisterPage/>}></Route>
+          <Route path='/underConstruction' element={<Construction/>}></Route>
+          <Route path='/confirmedBooking' element={<ConfirmedBooking/>}></Route>
         </Routes>
         <Footer/>
       </Router>

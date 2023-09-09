@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Logo from "../images/Logo.svg"
+import Logo from "../assets/Logo.svg"
 
 const Navbar = () => {
   return (
@@ -13,19 +13,19 @@ const Navbar = () => {
             <Link to='/'>Home</Link>
           </li>
           <li>
-            <a href="/#About">About</a>
+            <Link to='/underConstruction'>About</Link>
           </li>
           <li>
-            <a href="/#Menu">Menu</a>
+            <Link to='/underConstruction'>About</Link>
           </li>
           <li>
-            <a href="/#Reservations">Reservations</a>
+            <Link to='/booking'>Reservations</Link>
           </li>
           <li>
-            <a href="/#Order">Order Online</a>
+            <Link to='/underConstruction'>About</Link>
           </li>
           <li>
-            <a href="/#Login">Login</a>
+            <Link to='/underConstruction'>About</Link>
           </li>
         </ul>
       </div>
