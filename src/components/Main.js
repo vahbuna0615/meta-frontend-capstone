@@ -32,7 +32,7 @@ const Main = () => {
     <main>
       <div className="main-menu">
         <h1>This week's specials!</h1>
-        <button className="button-styles" onClick={() => navigate('#menu')}>Online Menu</button>
+        <button className="button-styles" onClick={() => navigate('/underConstruction')}>Online Menu</button>
       </div>
       <div className="menu-item-grid">
         {menuItems.map((item) => {
